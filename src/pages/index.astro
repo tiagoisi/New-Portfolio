@@ -1,0 +1,135 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import AboutMe from "@/components/AboutMe.astro"
+import Briefcase from "@/components/icons/Briefcase.astro"
+import CodeIcon from "@/components/icons/Code.astro"
+import ProfileCheck from "@/components/icons/ProfileCheck.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import Hero from "@/components/Hero.astro"
+import Html from "@/components/icons/Html.astro"
+import Css from "@/components/icons/Css.astro"
+import Javascript from "@/components/icons/Javascript.astro"
+import New from "@/components/icons/New.astro"
+import Git from "@/components/icons/Git.astro"
+import GitHub from "@/components/icons/GitHub.astro"
+import VisualStudio from "@/components/icons/VisualStudio.astro"
+import Node from "@/components/icons/Node.astro"
+import Npm from "@/components/icons/Npm.astro"
+import Tailwind from "@/components/icons/Tailwind.astro"
+import NewProfilecheck from "@/components/icons/NewProfilecheck.astro"
+import LinkButton from "@/components/LinkButton.astro"
+import Book from "@/components/icons/Book.astro"
+import NewLinkButton from "@/components/NewLinkButton.astro"
+import React from "@/components/icons/React.astro"
+import Vite from "@/components/icons/Vite.astro"
+import Projects2 from "@/components/Projects2.astro"
+---
+
+<Layout
+  title="Tiago's Portfolio"
+  description="Contrata a Tiago Isidro para crear tu pagina web. Desarrollador Web Front End. Especializado en soluciones únicas."
+>
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-36">
+      <Hero>
+      </slot>
+    </Hero>
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      <Projects2 />
+    </SectionContainer>
+
+    <SectionContainer>
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-2 text-black/80 dark:text-white pt-20"
+      >
+        <ProfileCheck class="size-8" />
+         Tecnologias
+      </h2>
+
+      <div class="flex flex-col phn:flex phn:flex-row">
+      <div class="flex ml-20 mr-10 lg:flex-col lg:ml-0 lg:mr-0">
+      <div class="flex flex-col lg:flex-row w-full lg:max-w-[700px] mx-auto mt-10">
+      <div class="flex flex-col mr-10">
+        <Html class="size-20 mt-5 lg:mt-0"></Html>
+        <h2 class="text-center max-w-[80px] mt-1">HTML</h2>
+      </div>
+        <div class="flex flex-col mr-10">
+          <Css class="size-20 mt-5 lg:mt-0"></Css>
+          <h2 class="text-center max-w-[80px] mt-1">CSS</h2>
+        </div>
+        <div class="flex flex-col mr-10">
+          <Javascript class="size-20 mt-5 lg:mt-0"></Javascript>
+          <h2 class="text-center max-w-[80px] mt-1">Javascript</h2>
+        </div>
+        <div class="flex flex-col mr-10">
+          <New class="size-20 mt-5 lg:mt-0"></New>
+          <h2 class="text-center max-w-[80px] mt-1">Astro</h2>
+        </div>
+        <div class="flex flex-col mr-10">
+          <Git class="size-20 mt-5 lg:mt-0"></Git>
+          <h2 class="text-center max-w-[80px] mt-1">Git</h2>
+        </div>
+        <div class="flex flex-col mr-10">
+          <React class="size-20 mt-5 lg:mt-0"></React>
+          <h2 class="text-center max-w-[80px] mt-1">React JS</h2>
+        </div>
+      </div>
+    </div>
+
+      <div class="flex flex-col lg:flex-row w-full lg:max-w-[700px] mx-auto mt-10">
+        <div class="flex flex-col mr-10">
+          <GitHub class="size-20 mt-5 lg:mt-0"></Github>
+          <h2 class="text-center max-w-[80px] mt-1">GitHub</h2>
+        </div>
+        <div class="flex flex-col mr-10">
+          <VisualStudio class="size-20 mt-5 lg:mt-0"></VisualStudio>
+          <h2 class="text-center max-w-[80px] mt-1">VS Code</h2>
+        </div>
+        <div class="flex flex-col mr-10">
+          <Node class="size-20 mt-5 lg:mt-0"></Node>
+          <h2 class="text-center max-w-[80px] mt-1">Node</h2>
+        </div>
+        <div class="flex flex-col mr-10">
+          <Npm class="size-20 mt-5 lg:mt-0"></Npm>
+          <h2 class="text-center max-w-[80px] mt-1">Npm</h2>
+        </div>
+        <div class="flex flex-col mr-10">
+          <Tailwind class="size-20 mt-5 lg:mt-0"></Tailwind>
+          <h2 class="text-center max-w-[80px] mt-1">Tailwind <span class="phn:hidden">CSS</span></h2>
+        </div>
+        <div class="flex flex-col mr-10">
+          <Vite class="size-20 mt-5 lg:mt-0"></Vite>
+          <h2 class="text-center max-w-[80px] mt-1">Vite JS</h2>
+        </div>
+      </div>
+    </div>
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-2 text-black/80 dark:text-white pt-16"
+      >
+        <NewProfilecheck class="size-8" />
+        Sobre mí
+      </h2>
+      <AboutMe />
+      <div class="flex mt-20 w-full lg:max-w-[700px] mx-auto">
+      <div class="flex flex-col">
+      <img width="200" height="200" src="/ResponsiveCertificate.png" class="object-cover mr-5 mb-3 w-40 h-30 lg: m-5"><NewLinkButton href="https://www.freecodecamp.org/certification/Tiagoisi/responsive-web-design"><Book class="size-4"></Book><h1 class="text-sm">Mirar Certificado</h1></NewLinkButton></div>
+      <div class="flex flex-col">
+      <img width="200" height="200" src="/JavascriptCertificate.png" class="object-cover mr-5 mb-3 w-40 h-30 lg: m-5"><NewLinkButton href="https://www.freecodecamp.org/certification/Tiagoisi/javascript-algorithms-and-data-structures-v8"><Book class="size-4"></Book><h1 class="text-sm">Mirar Certificado</h1></NewLinkButton></div>
+    </div>
+    
+    </SectionContainer>
+
+  </div>
+  </main>
+</Layout>

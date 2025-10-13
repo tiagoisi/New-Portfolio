@@ -1,0 +1,159 @@
+---
+import LinkButton from "./LinkButton.astro"
+import Html from "./icons/Html.astro"
+import Css from "./icons/Css.astro"
+import Javascript from "./icons/Javascript.astro"
+import Web from "./icons/Web.astro"
+import React from "./icons/React.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import Vite from "./icons/Vite.astro"
+
+const TAGS = {
+  HTML: {
+        name: "HTML",
+        class: "bg-orange-900 text-white",
+        icon: Html,
+    },
+
+  CSS: {
+        name: "CSS",
+        class: "bg-blue-900 text-white",
+        icon: Css,
+        },
+
+  JAVASCRIPT: {
+        name: "Javascript",
+        class: "bg-yellow-900 text-white",
+        icon: Javascript,
+    },
+
+  REACT: {
+        name: "React JS",
+        class: "bg-sky-900 bg-opacity-60 text-white",
+        icon: React,
+    },
+
+  TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-sky-900 bg-opacity-60 text-white",
+        icon: Tailwind,
+    },
+
+  VITE: {
+        name: "Vite JS",
+        class: "bg-violet-900 bg-opacity-50 text-white",
+        icon: Vite,
+    },
+}
+const PROJECTS = [
+{
+    title: "API | BackEnd Eccommerce",
+    description:
+      "Proyecto sobre IA, con la capacidad de transformar tus ideas en realidad, generando imágenes impresionantes y textos personalizados con solo unos clics.",
+    github: "https://github.com/tiagoisi/ecommerce-tiagoisi",
+    image: "/projects/Brainwave.webp",
+    alt:'Imagen de Eccommerce Back cargando...',
+    tags: [TAGS.REACT, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.VITE],
+  },
+  {
+    title: "Brainwave - AI",
+    description:
+      "Proyecto sobre IA, con la capacidad de transformar tus ideas en realidad, generando imágenes impresionantes y textos personalizados con solo unos clics.",
+    github: "https://brainwave-ia.netlify.app",
+    image: "/projects/Brainwave.webp",
+    alt:'Imagen de Brainwave AI cargando...',
+    tags: [TAGS.REACT, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.VITE],
+  },
+  {
+    title: "Spotify Clone - Music Player",
+    description:
+      "Copia de Spotify con la capacidad de escuchar, pausar, pasar al siguiente tema, y abrir los albumes en su totalidad.",
+    github: "https://spotify-clone-ms.netlify.app",
+    image: "/projects/spotify-clone.webp",
+    alt:'Imagen de Spotify Clone cargando...',
+    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.VITE],
+  },
+  {
+    title: "Bull Gym - Fitness Brand",
+    description:
+      "Cadena de gimnasios ubicada a lo largo de la Argentina, que cuenta con su catalogo de suplementos y app para dispositivos móviles.",
+    github: "https://bullgym.netlify.app",
+    image: "/projects/bullgym.webp",
+    alt:'Imagen de Bull Gym cargando...',
+    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.VITE],
+  },
+  {
+    title: "Eccommerce - ShoppingCart",
+    description:
+      "Proyecto hecho con javascript, el cual tiene un carrito de compras dinámico, ofreciendo una experiencia de usuario fluida, y visualmente atractiva.",
+    github: "https://eccommerce-javascript.netlify.app",
+    image: "/projects/eccomerceport.webp",
+    alt:'Imagen Eccomerce cargando...',
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Mitaiti - Landing Page",
+    description:
+      "Diseñe esta web para una empresa de porcelana fria que queria mostrar sus productos.  Te abre las puertas a una experiencia única en el mundo del arte.",
+    github: "https://mitaiti.netlify.app",
+    image: "/projects/mitaitiport.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Dietetica Waqye - Catalogo",
+    description:
+      "Cree esta pagina para una dietetica con el fin de mostrar el amplio catalogo que poseen para quienes buscan una vida más saludable y equilibrada.",
+    github: "https://dietetica-wayqe.netlify.app",
+    image: "/projects/dietwayqport.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+  },
+]
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, github, alt }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt={alt} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <Web class="size-6" />
+              Visitar Web
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
+
+
+
+
