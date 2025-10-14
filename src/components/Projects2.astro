@@ -3,6 +3,12 @@ import LinkButton from "./LinkButton.astro"
 import Html from "./icons/Html.astro"
 import Css from "./icons/Css.astro"
 import Javascript from "./icons/Javascript.astro"
+import TypeScript from "./icons/TypeScript.astro"
+import Nest from "./icons/Nest.astro"
+import Postgre from "./icons/Postgre.astro"
+import TypeORM from "./icons/TypeORM.astro"
+import Swagger from "./icons/Swagger.astro"
+import JWT from "./icons/JWT.astro"
 import Web from "./icons/Web.astro"
 import React from "./icons/React.astro"
 import Tailwind from "./icons/Tailwind.astro"
@@ -27,6 +33,42 @@ const TAGS = {
         class: "bg-yellow-900 text-white",
         icon: Javascript,
     },
+
+  TYPESCRIPT: {
+      name: "TypeScript",
+      class: "bg-sky-900 bg-opacity-60 text-white",
+      icon: TypeScript
+    },
+
+  NEST: {
+      name: "NestJS",
+      class: "bg-red-900 bg-opacity-60 text-white",
+      icon: Nest
+  },
+
+  POSTGRE: {
+    name: "PostgreSQL",
+    class: "bg-sky-900 bg-opacity-60 text-white",
+    icon: Postgre
+  },
+
+  TYPEORM: {
+    name: "TypeORM",
+    class: "bg-orange-900 bg-opacity-60 text-white",
+    icon: TypeORM
+  },
+
+  SWAGGER: {
+    name: "Swagger",
+    class: "bg-green-900 bg-opacity-60 text-white",
+    icon: Swagger
+  },
+
+  JWT: {
+    name: "JWT",
+    class: "bg-violet-900 bg-opacity-60 text-white",
+    icon: JWT
+  },
 
   REACT: {
         name: "React JS",
@@ -54,7 +96,7 @@ const PROJECTS = [
     github: "https://github.com/tiagoisi/ecommerce-tiagoisi",
     image: "/projects/API-Backend.webp",
     alt:'Imagen de API BackEnd cargando...',
-    tags: [TAGS.REACT, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.VITE],
+    tags: [TAGS.TYPESCRIPT, TAGS.NEST, TAGS.TYPEORM, TAGS.JWT, TAGS.POSTGRE, TAGS.SWAGGER],
   },
   {
     title: "Brainwave - AI",
