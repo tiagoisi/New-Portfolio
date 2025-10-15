@@ -9,6 +9,9 @@ import Hero from "@/components/Hero.astro"
 import Html from "@/components/icons/Html.astro"
 import Css from "@/components/icons/Css.astro"
 import Javascript from "@/components/icons/Javascript.astro"
+import Postman from "@/components/icons/Postman.astro"
+import MongoDB from "@/components/icons/MongoDB.astro"
+import Express from "@/components/icons/Express.astro"
 import New from "@/components/icons/New.astro"
 import Git from "@/components/icons/Git.astro"
 import GitHub from "@/components/icons/GitHub.astro"
@@ -57,7 +60,7 @@ import JWT from "@/components/icons/JWT.astro"
     class="flex items-center mb-6 text-3xl font-semibold gap-x-2 text-black/80 dark:text-white pt-20"
   >
     <ProfileCheck class="size-8" />
-     Tecnologias
+     Tecnologias & Herramientas
   </h2>
 
   <div class="flex flex-col items-center justify-center gap-y-10">
@@ -69,12 +72,15 @@ import JWT from "@/components/icons/JWT.astro"
       { icon: Javascript, name: "Javascript" },
       { icon: TypeScript, name: "TypeScript" },
       { icon: Nest, name: "Nest" },
-      { icon: Postgre, name: "Postgre" },
+      { icon: Postgre, name: "PostgreSQL" },
+      { icon: MongoDB, name: "MongoDB" },
+      { icon: Express, name: "Express" },
       { icon: Swagger, name: "Swagger" },
       { icon: TypeORM, name: "TypeORM" },
       { icon: JWT, name: "JWT" },
       { icon: Git, name: "Git" },
       { icon: React, name: "React JS" },
+      { icon: Postman, name: "Postman" },
     ].map(({ icon: Icon, name }) => (
       <div class="flex flex-col items-center">
         <Icon class="size-20" />
