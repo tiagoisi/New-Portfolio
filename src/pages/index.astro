@@ -23,6 +23,12 @@ import NewLinkButton from "@/components/NewLinkButton.astro"
 import React from "@/components/icons/React.astro"
 import Vite from "@/components/icons/Vite.astro"
 import Projects2 from "@/components/Projects2.astro"
+import TypeScript from "@/components/icons/TypeScript.astro"
+import Nest from "@/components/icons/Nest.astro"
+import Postgre from "@/components/icons/Postgre.astro"
+import Swagger from "@/components/icons/Swagger.astro"
+import TypeORM from "@/components/icons/TypeORM.astro"
+import JWT from "@/components/icons/JWT.astro"
 ---
 
 <Layout
@@ -46,72 +52,58 @@ import Projects2 from "@/components/Projects2.astro"
       <Projects2 />
     </SectionContainer>
 
-    <SectionContainer>
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-2 text-black/80 dark:text-white pt-20"
-      >
-        <ProfileCheck class="size-8" />
-         Tecnologias
-      </h2>
+<SectionContainer>
+  <h2
+    class="flex items-center mb-6 text-3xl font-semibold gap-x-2 text-black/80 dark:text-white pt-20"
+  >
+    <ProfileCheck class="size-8" />
+     Tecnologias
+  </h2>
 
-      <div class="flex flex-col phn:flex phn:flex-row">
-      <div class="flex ml-20 mr-10 lg:flex-col lg:ml-0 lg:mr-0">
-      <div class="flex flex-col lg:flex-row w-full lg:max-w-[700px] mx-auto mt-10">
-      <div class="flex flex-col mr-10">
-        <Html class="size-20 mt-5 lg:mt-0"></Html>
-        <h2 class="text-center max-w-[80px] mt-1">HTML</h2>
+  <div class="flex flex-col items-center justify-center gap-y-10">
+  <!-- Primera fila -->
+  <div class="flex flex-wrap justify-center gap-10">
+    {[
+      { icon: Html, name: "HTML" },
+      { icon: Css, name: "CSS" },
+      { icon: Javascript, name: "Javascript" },
+      { icon: TypeScript, name: "TypeScript" },
+      { icon: Nest, name: "Nest" },
+      { icon: Postgre, name: "Postgre" },
+      { icon: Swagger, name: "Swagger" },
+      { icon: TypeORM, name: "TypeORM" },
+      { icon: JWT, name: "JWT" },
+      { icon: Git, name: "Git" },
+      { icon: React, name: "React JS" },
+    ].map(({ icon: Icon, name }) => (
+      <div class="flex flex-col items-center">
+        <Icon class="size-20" />
+        <h2 class="text-center mt-2">{name}</h2>
       </div>
-        <div class="flex flex-col mr-10">
-          <Css class="size-20 mt-5 lg:mt-0"></Css>
-          <h2 class="text-center max-w-[80px] mt-1">CSS</h2>
-        </div>
-        <div class="flex flex-col mr-10">
-          <Javascript class="size-20 mt-5 lg:mt-0"></Javascript>
-          <h2 class="text-center max-w-[80px] mt-1">Javascript</h2>
-        </div>
-        <div class="flex flex-col mr-10">
-          <New class="size-20 mt-5 lg:mt-0"></New>
-          <h2 class="text-center max-w-[80px] mt-1">Astro</h2>
-        </div>
-        <div class="flex flex-col mr-10">
-          <Git class="size-20 mt-5 lg:mt-0"></Git>
-          <h2 class="text-center max-w-[80px] mt-1">Git</h2>
-        </div>
-        <div class="flex flex-col mr-10">
-          <React class="size-20 mt-5 lg:mt-0"></React>
-          <h2 class="text-center max-w-[80px] mt-1">React JS</h2>
-        </div>
-      </div>
-    </div>
+    ))}
+  </div>
 
-      <div class="flex flex-col lg:flex-row w-full lg:max-w-[700px] mx-auto mt-10">
-        <div class="flex flex-col mr-10">
-          <GitHub class="size-20 mt-5 lg:mt-0"></Github>
-          <h2 class="text-center max-w-[80px] mt-1">GitHub</h2>
-        </div>
-        <div class="flex flex-col mr-10">
-          <VisualStudio class="size-20 mt-5 lg:mt-0"></VisualStudio>
-          <h2 class="text-center max-w-[80px] mt-1">VS Code</h2>
-        </div>
-        <div class="flex flex-col mr-10">
-          <Node class="size-20 mt-5 lg:mt-0"></Node>
-          <h2 class="text-center max-w-[80px] mt-1">Node</h2>
-        </div>
-        <div class="flex flex-col mr-10">
-          <Npm class="size-20 mt-5 lg:mt-0"></Npm>
-          <h2 class="text-center max-w-[80px] mt-1">Npm</h2>
-        </div>
-        <div class="flex flex-col mr-10">
-          <Tailwind class="size-20 mt-5 lg:mt-0"></Tailwind>
-          <h2 class="text-center max-w-[80px] mt-1">Tailwind <span class="phn:hidden">CSS</span></h2>
-        </div>
-        <div class="flex flex-col mr-10">
-          <Vite class="size-20 mt-5 lg:mt-0"></Vite>
-          <h2 class="text-center max-w-[80px] mt-1">Vite JS</h2>
-        </div>
+  <!-- Segunda fila -->
+  <div class="flex flex-wrap justify-center gap-10">
+    {[
+      { icon: New, name: "Astro" },
+      { icon: GitHub, name: "GitHub" },
+      { icon: VisualStudio, name: "VS Code" },
+      { icon: Node, name: "Node" },
+      { icon: Npm, name: "Npm" },
+      { icon: Tailwind, name: "Tailwind CSS" },
+      { icon: Vite, name: "Vite JS" },
+    ].map(({ icon: Icon, name }) => (
+      <div class="flex flex-col items-center">
+        <Icon class="size-20" />
+        <h2 class="text-center mt-2">{name}</h2>
       </div>
-    </div>
-    </SectionContainer>
+    ))}
+  </div>
+</div>
+
+</SectionContainer>
+
 
     <SectionContainer id="sobre-mi">
       <h2
