@@ -32,6 +32,24 @@ import Postgre from "@/components/icons/Postgre.astro"
 import Swagger from "@/components/icons/Swagger.astro"
 import TypeORM from "@/components/icons/TypeORM.astro"
 import JWT from "@/components/icons/JWT.astro"
+import CertificateCard from "@/components/CertificateCard.astro"
+const certificados = [
+  {
+    img: '/Certificado Henry.png',
+    label: 'Full Stack Developer',
+    institution: 'Henry'
+  },
+  {
+    img: '/JavascriptCertificate.png',
+    label: 'JavaScript Algorithms and Data Structures',
+    institution: 'freeCodeCamp'
+  },
+  {
+    img: '/ResponsiveCertificate.png',
+    label: 'Responsive Web Design',
+    institution: 'freeCodeCamp'
+  },
+]
 ---
 
 <Layout
@@ -110,23 +128,22 @@ import JWT from "@/components/icons/JWT.astro"
 
 </SectionContainer>
 
+<SectionContainer id="sobre-mi">
+  <h2
+    class="flex items-center mb-6 text-3xl font-semibold gap-x-2 text-black/80 dark:text-white pt-16"
+  >
+    <NewProfilecheck class="size-8" />
+    Sobre mí
+  </h2>
 
-    <SectionContainer id="sobre-mi">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-2 text-black/80 dark:text-white pt-16"
-      >
-        <NewProfilecheck class="size-8" />
-        Sobre mí
-      </h2>
-      <AboutMe />
-      <div class="flex mt-20 w-full lg:max-w-[700px] mx-auto">
-      <div class="flex flex-col">
-      <img width="200" height="200" src="/ResponsiveCertificate.png" class="object-cover mr-5 mb-3 w-40 h-30 lg: m-5"><NewLinkButton href="https://www.freecodecamp.org/certification/Tiagoisi/responsive-web-design"><Book class="size-4"></Book><h1 class="text-sm">Mirar Certificado</h1></NewLinkButton></div>
-      <div class="flex flex-col">
-      <img width="200" height="200" src="/JavascriptCertificate.png" class="object-cover mr-5 mb-3 w-40 h-30 lg: m-5"><NewLinkButton href="https://www.freecodecamp.org/certification/Tiagoisi/javascript-algorithms-and-data-structures-v8"><Book class="size-4"></Book><h1 class="text-sm">Mirar Certificado</h1></NewLinkButton></div>
-    </div>
-    
-    </SectionContainer>
+  <AboutMe />
+
+  <div class="flex mt-20 w-full lg:max-w-[700px] mx-auto gap-5 flex-wrap justify-center">
+    {certificados.map(cert => (
+      <CertificateCard {...cert} />
+    ))}
+  </div>
+</SectionContainer>
 
   </div>
   </main>
