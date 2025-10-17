@@ -32,7 +32,9 @@ import Postgre from "@/components/icons/Postgre.astro"
 import Swagger from "@/components/icons/Swagger.astro"
 import TypeORM from "@/components/icons/TypeORM.astro"
 import JWT from "@/components/icons/JWT.astro"
+import Graduation from "@/components/icons/Graduation.astro"
 import CertificateCard from "@/components/CertificateCard.astro"
+import ExperienceItem from "@/components/ExperienceItem.astro"
 const certificados = [
   {
     img: '/Certificado Henry.png',
@@ -63,9 +65,22 @@ const certificados = [
     </Hero>
     </SectionContainer>
 
+    <SectionContainer>
+      <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+      <Graduation />
+      Experiencia Académica
+      </h2>
+      <ExperienceItem
+        title="Back End Developer"
+        company="Proyecto Grupal de Henry"
+        description="Co-lideré el desarrollo de Train Up, una plataforma de gestión integral para gimnasios y centros fitness. Diseñé y construí una arquitectura modular y escalable con NestJS y TypeScript, utilizando PostgreSQL (TypeORM) y garantizando la seguridad con autenticación JWT, control de roles (NextAuth.js), procesamiento de pagos con Stripe y gestión de archivos en Cloudinary."
+        date="Septiembre - Octubre 2025"
+      />
+    </SectionContainer>
+
     <SectionContainer id="proyectos">
       <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+        class="flex items-center pt-14 mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
       >
         <CodeIcon class="size-7" />
         Proyectos
