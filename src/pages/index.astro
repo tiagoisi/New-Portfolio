@@ -56,7 +56,7 @@ const certificados = [
 
 <Layout
   title="Tiago's Portfolio"
-  description="Contrata a Tiago Isidro para crear tu pagina web. Desarrollador Web Front End. Especializado en soluciones únicas."
+  description="Contrata a Tiago Isidro para crear tu pagina web. Desarrollador Web Full Stack. Especializado en Back End."
 >
   <main class="px-4">
     <SectionContainer class="py-16 md:py-36">
@@ -65,18 +65,26 @@ const certificados = [
     </Hero>
     </SectionContainer>
 
-    <SectionContainer>
-      <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
-      <Graduation />
-      Experiencia Académica
-      </h2>
-      <ExperienceItem
-        title="Back End Developer"
-        company="Proyecto Grupal de Henry"
-        description="Co-lideré el desarrollo de Train Up, una plataforma de gestión integral para gimnasios y centros fitness. Diseñé y construí una arquitectura modular y escalable con NestJS y TypeScript, utilizando PostgreSQL (TypeORM) y garantizando la seguridad con autenticación JWT, control de roles (NextAuth.js), procesamiento de pagos con Stripe y gestión de archivos en Cloudinary."
-        date="Septiembre - Octubre 2025"
-      />
-    </SectionContainer>
+<SectionContainer id="experiencia">
+  <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+    <Graduation />
+    Experiencia Académica
+  </h2>
+  <ExperienceItem
+    title="Back End Developer"
+    company="Henry Bootcamp · Proyecto Final"
+    description="Desarrollé y lideré el backend de Train Up, una plataforma SaaS para gestión de gimnasios con más de 15 funcionalidades integradas. Participé activamente en el diseño e implementación de la arquitectura escalable con NestJS y TypeScript, el sistema de autenticación con roles, los pagos con Stripe y el almacenamiento en la nube, trabajando en conjunto con el equipo para asegurar calidad y consistencia en el código."
+    date="Septiembre - Octubre 2025"
+    link="https://front-amber-tau.vercel.app/"
+  />
+  
+  <ExperienceItem
+    title="Estudiante Full Stack"
+    company="Henry Bootcamp"
+    description="Bootcamp intensivo de más de 800 horas enfocado en el desarrollo web moderno. Formación práctica en JavaScript, React, Node.js, TypeScript, Express, PostgreSQL, metodologías ágiles (Scrum), entre otras. Completé más de 4 proyectos individuales y uno grupal, destacando por mi resolución de problemas, adaptabilidad y trabajo en equipo."
+    date="Mayo - Octubre 2024"
+  />
+</SectionContainer>
 
     <SectionContainer id="proyectos">
       <h2

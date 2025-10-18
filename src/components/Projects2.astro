@@ -14,6 +14,7 @@ import React from "./icons/React.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Vite from "./icons/Vite.astro"
 import GitHub from "./icons/GitHub.astro"
+import Express from "./icons/Express.astro"
 
 const TAGS = {
   HTML: {
@@ -50,6 +51,12 @@ const TAGS = {
     name: "PostgreSQL",
     class: "bg-sky-900 bg-opacity-60 text-white",
     icon: Postgre
+  },
+
+  EXPRESS: {
+    name: "Express",
+    class: "bg-gray-700 bg-opacity-60 text-white",
+    icon: Express
   },
 
   TYPEORM: {
@@ -92,7 +99,7 @@ const PROJECTS = [
 {
     title: "API | BackEnd Eccommerce",
     description:
-      "API backend para ecommerce desarrollada con NestJS, JWT y PostgreSQL. Incluye gestión de productos y pedidos, autenticación segura y documentación con Swagger.",
+      "API REST para e-commerce desarrollada con NestJS y arquitectura modular. Implementa autenticación JWT basada en roles, CRUD completo de productos y pedidos, validaciones de negocio, relaciones complejas en PostgreSQL y documentación interactiva con Swagger.",
     github: "https://github.com/tiagoisi/ecommerce-tiagoisi",
     image: "/projects/API-Backend.webp",
     alt:'Imagen de API BackEnd cargando...',
@@ -101,16 +108,16 @@ const PROJECTS = [
   {
     title: "Steelcore - Gestor de Turnos",
     description:
-      "Aplicación web para la gestión de turnos con sistema de login básico y almacenamiento en base de datos. Integración tanto del lado BackEnd como FrontEnd.",
+      "Aplicación fullstack para gestión de turnos con autenticación completa (registro/login/logout). Implementa lógica de negocio para reservas con validaciones (horarios laborales, cancelación con 24hs de anticipación), persistencia en base de datos y manejo de sesiones de usuario.",
     github: "https://github.com/tiagoisi/gestor-turnos",
     image: "/projects/steelcore.webp",
     alt:'Imagen de Gestor de Turnos cargando...',
-    tags: [TAGS.TYPESCRIPT, TAGS.TYPEORM, TAGS.POSTGRE, TAGS.REACT],
+    tags: [TAGS.TYPESCRIPT, TAGS.TYPEORM, TAGS.EXPRESS, TAGS.POSTGRE, TAGS.REACT],
   },
   {
     title: "Brainwave - AI",
     description:
-      "Proyecto sobre IA, con la capacidad de transformar tus ideas en realidad, generando imágenes impresionantes y textos personalizados con solo unos clics.",
+      "Landing page moderna con diseño futurista inspirado en plataformas de IA. Desarrollada con React y Tailwind CSS, destacando por animaciones fluidas, UI/UX contemporáneo y diseño responsive.",
     web: "https://brainwave-ia.netlify.app",
     image: "/projects/Brainwave.webp",
     alt:'Imagen de Brainwave AI cargando...',
@@ -119,37 +126,12 @@ const PROJECTS = [
   {
     title: "Spotify Clone - Music Player",
     description:
-      "Copia de Spotify con la capacidad de escuchar, pausar, pasar al siguiente tema, y abrir los albumes en su totalidad.",
+      "Clon funcional de Spotify con reproductor de audio completo. Incluye controles de reproducción (play/pause, skip), navegación por álbumes, gestión de estado para el reproductor y diseño pixel-perfect replicando la UI original.",
     web: "https://spotify-clone-ms.netlify.app",
     image: "/projects/spotify-clone.webp",
     alt:'Imagen de Spotify Clone cargando...',
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.VITE],
-  },
-  {
-    title: "Eccommerce - ShoppingCart",
-    description:
-      "Proyecto hecho con javascript, el cual tiene un carrito de compras dinámico, ofreciendo una experiencia de usuario fluida, y visualmente atractiva.",
-    web: "https://eccommerce-javascript.netlify.app",
-    image: "/projects/eccomerceport.webp",
-    alt:'Imagen Eccomerce cargando...',
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
-  },
-  {
-    title: "Mitaiti - Landing Page",
-    description:
-      "Diseñe esta web para una empresa de porcelana fria que queria mostrar sus productos.  Te abre las puertas a una experiencia única en el mundo del arte.",
-    web: "https://mitaiti.netlify.app",
-    image: "/projects/mitaitiport.webp",
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
-  },
-  {
-    title: "Dietetica Waqye - Catalogo",
-    description:
-      "Cree esta pagina para una dietetica con el fin de mostrar el amplio catalogo que poseen para quienes buscan una vida más saludable y equilibrada.",
-    web: "https://dietetica-wayqe.netlify.app",
-    image: "/projects/dietwayqport.webp",
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
-  },
+  }
 ]
 ---
 
@@ -159,20 +141,19 @@ const PROJECTS = [
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt={alt} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+      <img alt={alt} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" src={image} />
     </div>
   </div>
-
   <div class="w-full md:w-1/2 md:max-w-lg">
     <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
       {title}
     </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
+    <div class="flex flex-col mt-2">
+      <ul class="flex flex-row flex-wrap mb-2 gap-2">
           {tags.map((tag) => (
             <li>
               <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 whitespace-nowrap`}
               >
                 <tag.icon class="size-4" />
                 {tag.name}
@@ -180,7 +161,6 @@ const PROJECTS = [
             </li>
           ))}
         </ul>
-
       <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
         <footer class="flex items-end justify-start mt-4 gap-x-4">
           <LinkButton href={github || web}>
