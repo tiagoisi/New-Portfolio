@@ -20,7 +20,7 @@ const navItems = [
   {
     title: "Contacto",
     label: "contacto",
-    url: "mailto:tiagoisidromadoery123@gmail.com",
+    url: "/#contacto",
   },
 ]
 ---
@@ -33,7 +33,7 @@ const navItems = [
   >
     {
       navItems.map((link) => (
-        <a
+          <a
           class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
           aria-label={link.label}
           href={link.url}
@@ -67,22 +67,44 @@ const navItems = [
 
     const observer = new IntersectionObserver(callback, {
       root: null,
-      rootMargin: "0px",
-      threshold: 0.3,
+      rootMargin: "0px 0px -20% 0px",
+      threshold: 0.2,
     })
 
     sections.forEach((section) => {
       observer.observe(section)
     })
 
+    // Detectar cuando llegas al final de la página para activar Contacto
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+      const windowHeight = window.innerHeight
+      const docHeight = document.documentElement.scrollHeight
+
+      // Si estás en los últimos 50px de la página
+      if (scrollTop + windowHeight >= docHeight - 50) {
+        navItems.forEach((item) => {
+          if (item.getAttribute("aria-label") === "contacto") {
+            item.classList.add("text-yellow-500")
+          } else {
+            item.classList.remove("text-yellow-500")
+          }
+        })
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+
     // Cleanup function
     document.onvisibilitychange = () => {
       if (document.visibilityState === "hidden") {
         observer.disconnect()
+        window.removeEventListener("scroll", handleScroll)
       } else {
         sections.forEach((section) => {
           observer.observe(section)
         })
+        window.addEventListener("scroll", handleScroll)
       }
     }
   })
@@ -97,7 +119,7 @@ const navItems = [
 
   @keyframes nav-shadown {
     to {
-      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
+      @apply shadow-lg ring-1 backdrop-blur-md bg-white/30 dark:bg-gray-800/30 ring-white/20;
     }
   }
 </style>
