@@ -109,6 +109,7 @@ const PROJECTS = [
     title: "Steelcore - Gestor de Turnos",
     description:
       "Aplicación fullstack para gestión de turnos con autenticación completa (registro/login/logout). Implementa lógica de negocio para reservas con validaciones (horarios laborales, cancelación con 24hs de anticipación), persistencia en base de datos y manejo de sesiones de usuario.",
+    web: "https://steelcore.vercel.app/",
     github: "https://github.com/tiagoisi/gestor-turnos",
     image: "/projects/steelcore.webp",
     alt:'Imagen de Gestor de Turnos cargando...',
@@ -119,6 +120,7 @@ const PROJECTS = [
     description:
       "Landing page moderna con diseño futurista inspirado en plataformas de IA. Desarrollada con React y Tailwind CSS, destacando por animaciones fluidas, UI/UX contemporáneo y diseño responsive.",
     web: "https://brainwave-ia.netlify.app",
+    github: "https://github.com/tiagoisi/Brainwave",
     image: "/projects/Brainwave.webp",
     alt:'Imagen de Brainwave AI cargando...',
     tags: [TAGS.REACT, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.VITE],
@@ -128,6 +130,7 @@ const PROJECTS = [
     description:
       "Clon funcional de Spotify con reproductor de audio completo. Incluye controles de reproducción (play/pause, skip), navegación por álbumes, gestión de estado para el reproductor y diseño pixel-perfect replicando la UI original.",
     web: "https://spotify-clone-ms.netlify.app",
+    github: "https://github.com/tiagoisi/Spotify-Clone",
     image: "/projects/spotify-clone.webp",
     alt:'Imagen de Spotify Clone cargando...',
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.VITE],
@@ -163,10 +166,18 @@ const PROJECTS = [
         </ul>
       <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
         <footer class="flex items-end justify-start mt-4 gap-x-4">
-          <LinkButton href={github || web}>
-            {github ? <GitHub class="size-6" /> : <Web class="size-6" />}
-            {github ? "Ver en GitHub" : "Visitar Web"}
-          </LinkButton>
+          {web && (
+            <LinkButton href={web}>
+              <Web class="size-6" />
+              Visitar Web
+            </LinkButton>
+          )}
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Ver Código
+            </LinkButton>
+          )}
         </footer>
     </div>
   </div>
@@ -174,7 +185,3 @@ const PROJECTS = [
     ))
   }
 </div>
-
-
-
-
